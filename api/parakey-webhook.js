@@ -78,14 +78,6 @@ module.exports = async (req, res) => {
       res.status(400).send('Bad Request - Invalid JSON');
       return;
     }
-    // ↑↑↑ END ADD
-
-    // Verify the secret, if applicable
-    // const providedSecret = req.headers['x-parakey-secret'];
-    // if (PARAKEY_WEBHOOK_SECRET && providedSecret !== PARAKEY_WEBHOOK_SECRET) {
-    //   res.status(401).send('Unauthorized');
-    //   return;
-    // }
 
     // Check if the event indicates a door unlock
     if (eventData.event === 'door_unlocked') {
